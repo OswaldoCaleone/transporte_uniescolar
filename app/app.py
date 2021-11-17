@@ -36,6 +36,6 @@ def escola():
     return render_template('escola.html')
 
 
-@app.route('/transportado')
-def transportado():
-    return render_template('transportado.html')
+@app.route('/transportador')
+def transportador():
+    return render_template('transportador.html')
