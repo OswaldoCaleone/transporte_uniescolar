@@ -13,17 +13,16 @@ app.config["SQLALCHEMY_DATABASE_URI"] = database_file
 db = SQLAlchemy(app)
 
 
-class Posts(db.Model):
+class Formulário(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     created = db.Column(db.DateTime, default=datetime.datetime.utcnow)
-    title = db.Column(db.String(80), nullable=False)
-    content = db.Column(db.String(200), nullable=False)
+    nome = db.Column(db.String(80), nullable=False)
+    cpf = db.Column(db.String(11), nullable=False)
 
 
 @app.route('/')
 def index():
-    posts = Posts.query.all()
-    return render_template('index.html', posts=posts)
+       return render_template('index.html',)
 
 
 @app.route('/responsaveis')

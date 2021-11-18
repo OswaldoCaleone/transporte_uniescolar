@@ -1,22 +1,20 @@
 import sqlite3
 
-connection = sqlite3.connect('database.db')
+banco = sqlite3.connect('cadastro_1.db')
 
-with open('schema.sql') as f:
-    connection.executescript(f.read())
+cursor = banco.cursor()
 
-cur = connection.cursor()
-
-cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
-            ('First Post', ' Content for the first post')
+cursor.execute("INSERT INTO pessoas (nome, cpf) VALUES (?, ?)",
+            
             )
 
-cur.execute("INSERT INTO posts (title, content) VALUES (?, ?)",
-            ('Second Post', 'Content for the second post')
+cursor.execute("INSERT INTO pessoas (nome, cpf) VALUES (?, ?)",
+           
             )
 
-connection.commit()
-connection.close()
+banco.commit()
+
+banco.close()
 
 
 
